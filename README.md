@@ -19,7 +19,7 @@
      ```
   5. セーブした（コミットした）内容をリモート環境へ反映（Push）する
      ```
-     git push origin featue/AAA
+     git push origin feature/AAA
      ```
   6. 開発した内容をマージしてもらうリクエストを作成する
      - Pull Request など
