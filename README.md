@@ -10,6 +10,7 @@
   2. 最新の develop から作業用ブランチ（feature/AAA）を作成する
      ```
      git checkout -b feature/AAA
+     git branch <- 現在操作中のブランチを確認する
      ```
   3. ファイルを更新（開発）する
   4. 更新した内容をセーブする
