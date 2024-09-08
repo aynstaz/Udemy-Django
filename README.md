@@ -10,6 +10,7 @@
   2. 最新の develop から作業用ブランチ（feature/AAA）を作成する
      ```
      git checkout -b feature/AAA
+     git branch <- 現在操作中のブランチを確認する
      ```
   3. ファイルを更新（開発）する
   4. 更新した内容をセーブする
@@ -19,7 +20,7 @@
      ```
   5. セーブした（コミットした）内容をリモート環境へ反映（Push）する
      ```
-     git push origin featue/AAA
+     git push origin feature/AAA
      ```
   6. 開発した内容をマージしてもらうリクエストを作成する
      - Pull Request など
