@@ -13,7 +13,7 @@ from django.contrib.auth import login
 from todoapp.models import Task
 
 # Create your views here.
-class TaskList(LoginRequiredMixin, ListView):
+class TaskList(LoginRequiredMixin, ListView): 
     model = Task
     context_object_name = "tasks"
 
