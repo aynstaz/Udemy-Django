@@ -13,7 +13,7 @@ from django.contrib.auth import login
 from todoapp.models import Task
 
 # Create your views here.
-class TaskList(LoginRequiredMixin, ListView):
+class TaskList(LoginRequiredMixin, ListView): 
     model = Task
     context_object_name = "tasks"
 
@@ -22,8 +22,14 @@ class TaskList(LoginRequiredMixin, ListView):
         # context["programming"] = "python"
         # print(context)
         context["tasks"] = context["tasks"].filter(user=self.request.user)
+        
+        searchInputText = self.request.GET.get("search") or ""
+        if searchInputText:
+            context["tasks"] = context["tasks"].filter(title__startswith=searchInputText)
+
+        context["search"] = searchInputText
         return context
-    
+
 class TaskDetail(LoginRequiredMixin, DetailView):
     model = Task
     context_object_name = "task"

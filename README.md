@@ -35,3 +35,21 @@
      git pull
      ```
   10. 機能の開発時は都度 feature/AAA を作成する<br>手順２へ戻る
+
+- Python 仮想環境の開始方法
+  - 参考リンク
+    - [コピペで出来る Django アプリケーション開発環境構築（その１）](https://qiita.com/scythercas/items/e96b70aeab4698065dfb)
+  - 仮想環境の操作一覧
+    - ```
+      # 仮想環境一覧表示
+      conda env list
+      # 仮想環境の起動
+      conda activate 仮想環境名
+      # 仮想閑居の停止
+      conda deactivate
+      ```
+  - Django の操作一覧起動
+    - ```
+      # Django の起動
+      python manage.py runserver
+      ```
