@@ -1,13 +1,18 @@
 {% extends 'todoapp/base.html' %} {% block content %}
-<h1>Todoリスト</h1>
+
+<div class="header">
+  <h1>{{request.user}}のタスク</h1>
+</div>
+
+<!-- <h1>Todoリスト</h1>
 <a href="{% url 'create-task' %}">タスクの追加</a>
 
 <form method="GET">
   <input type="text" name="search" />
   <input type="submit" value="検索" />
-</form>
+</form> -->
 
-<table>
+<!-- <table>
   <tr>
     <th>タスク</th>
   </tr>
@@ -19,10 +24,23 @@
     <td><a href="{% url 'delete-task' task.id %}">削除</a></td>
   </tr>
   {% endfor %}
-</table>
+</table> -->
+
+<div class="tasksWrapper">
+  {% for task in tasks %}
+  <div class="taskWrapper">
+    <div class="taskTitle">
+      <a href="{% url 'task' task.id %}">{{task}}</a>
+    </div>
+    <a href="{% url 'edit-task' task.id %}" class="deleteButton">編集</a>
+    <a href="{% url 'delete-task' task.id %}" class="deleteButton">×</a>
+  </div>
+  {% endfor %}
+</div>
+
 <div class="loginAndLogout">
   {% if request.user.is_authenticated %}
-  <p>{{request.user}}</p>
+  <!-- <p>{{request.user}}</p> -->
   <a href="{% url 'logout' %}">ログアウト</a>
   {% else %}
   <a href="{% url 'login' %}">ログイン</a>
